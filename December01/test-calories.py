@@ -7,8 +7,11 @@ with open('testinput.txt') as f:
 
 
 class MyTestCase(unittest.TestCase):
-    def test_output(self):
-        self.assertEqual(calories.count(testData, 1), 24000)
+    def test_max_output(self):
+        self.assertEqual(24000, calories.count(testData, 0))
+
+    def test_min_output(self):
+        self.assertEqual(6000, calories.count(testData, 3))
 
 
 if __name__ == '__main__':
