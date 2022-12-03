@@ -1,21 +1,9 @@
 def count(inputdata, rank):
     """Process the data file and return the calories"""
 
-    count = 0
-    counts = []
-    for lines in inputdata.split('\n\n'):
-
-        for line in lines.split('\n'):
-            count += int(line)
-
-        counts.append(count)
-        count = 0
-
-    counts.sort(reverse=True)
-
-    return counts[rank]
+    return sorted((sum(int(line) for line in lines.split('\n'))) for lines in inputdata.strip().split('\n\n'))[-rank-1]
 
 
 with open('prodinput.txt') as f:
     dataFile = f.read()
-    print (count(dataFile, 0))
+    print(count(dataFile, 0))
