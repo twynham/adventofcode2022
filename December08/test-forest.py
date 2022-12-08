@@ -7,6 +7,7 @@ class MyTestCase(unittest.TestCase):
         with open('testinput.txt') as f:
             testData = f.read()
             trees = Trees(testData)
+            trees.processdata()
             self.assertEqual(21, trees.count())  # add assertion here
 
 
