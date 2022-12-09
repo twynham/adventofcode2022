@@ -10,6 +10,7 @@ class MyTestCase(unittest.TestCase):
             trees.processdata()
             self.assertEqual(21, trees.count())  # add assertion here
 
+            self.assertEqual(8, trees.scenic())  # add assertion here
 
 if __name__ == '__main__':
     unittest.main()
